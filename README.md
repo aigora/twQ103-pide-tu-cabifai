@@ -1,11 +1,16 @@
-# Título del trabajo
+## Pide tu cabifai
 
-Descripción breve del proyecto a realizar (2-3 frases).
+El trabajo constira en que el usuario podra pedir su cabifai al instante y ademas podra elegir su ruta para que su camino sea mas corto 
 
 ## Integrantes del equipo
 
-Nombres, apellidos, y usuario GitHub de los integrantes del equipo.
+Andrea Blas Murillo andreeeaaa
+Raquel Robledo Sedano LaRaxxel
+Samuel Cerro Hernandez SamuCHdez
 
 ## Objetivos del trabajo
 
-Lista de los objetivos que se persiguen con el trabajo propuesto.
+Intentar relalizar un mapa mediante matrices
+Que cada persona pueda crearse un usuario
+Que el usuario pueda ielegir su ruta
+
