@@ -3,6 +3,7 @@
 #include <stdlib.h>
 
 void mapa1();
+void mapa2();
 struct TUsuario{
 	int identificador;
 	char usuario[50];
@@ -81,7 +82,24 @@ case 1:
 	
 	
 	fclose(fichero);
-
+	
+	fichero = fopen("password.txt", "r");
+	
+	if (fichero == NULL) {
+		printf("No se ha podido abrir el fichero\n");
+		return -1; 
+	}
+	
+	i=0;
+		while (fscanf(fichero, "%s", vector[i].clave)!=EOF) {
+		i++;
+	}
+	
+	for(x=0;x<i;x++){
+		fscanf(fichero, "%s", vector[x].clave);
+	}
+	fclose(fichero);
+	
 		existe=1;
 				do{
 				printf("Introduzca su usuario:\n");
@@ -117,11 +135,10 @@ case 1:
 				}while(existe!=0);
 				fflush(stdin);
 			
-			printf("\tHa iniciado sesion con exito.\n");
+			printf("\nHa iniciado sesion con exito.\n");
 				
 			
 		
-			printf("Sesion iniciada con exito");
 			printf("\n\n");
 			system("pause");
 			system("cls");
@@ -196,6 +213,20 @@ case 1:
 		}
 		
 	fclose(fichero); 
+	
+	fichero = fopen("password.txt", "w");
+	
+	if (fichero == NULL) {
+		printf("No se ha podido abrir el fichero\n");
+		return -1;
+		}
+		
+	
+	for(j=0;j<i;j++){
+		fprintf(fichero,"%s\n", vector[j].clave);
+		}
+		
+	fclose(fichero); 
 			
 	break;
 	
@@ -236,8 +267,17 @@ case 1:
 			system("cls");
 				printf("\t\tIntroduzca su ubicacion(ciudad,calle):\n");
 				gets(cliente[nUsuarios].ubicacion);
-				printf("\t\tEn breves estara el conductor en su ubicacion.\n");
-				printf("El precio sera: 36$\n");
+					mapa2();
+				printf("\nElija una ruta,siendo la uno la mas larga.\n");
+				scanf("%d",&seleccionRuta1);
+				if(seleccionRuta1==1){
+					printf("\t\tEn breves estara el conductor en su ubicacion.\n");
+					printf("\t\tEl precio sera: 24$\n");
+				}else{
+					printf("\t\tEn breves estara el conductor en su ubicacion.\n");
+					printf("\t\tEl precio sera: 39.7$\n");
+				}
+			
 					system("pause");
 				system("cls");
 				break;
@@ -255,7 +295,7 @@ case 1:
 					printf("\t\tEl precio sera: 21$\n");
 				}else{
 					printf("\t\tEn breves estara el conductor en su ubicacion.\n");
-					printf("\t\tEl precio sera: 26.54$\n");
+					printf("\t\tEl precio sera: 27.54$\n");
 				}
 				
 					system("pause");
@@ -337,10 +377,29 @@ printf("|                                      |               |_______         
 printf("|                                      |_______________________|______________           | \n");
 printf("|                                                              |___          |           | \n");
 printf("|                                                                 /          |           |  \n");
-printf("|                            RUTA 2:32 minutos(26.58$) ------->  /_________ DESTINO      |\n");
+printf("|                            RUTA 2:32 minutos(27.58$) ------->  /_________ DESTINO      |\n");
 printf("|________________________________________________________________________________________|\n");
 
 }
 
+void mapa2(){
+
+printf(" ________________________________________________________________________________________\n");
+printf("|                            ___________________________________________SALIDA ________  |\n");
+printf("|                           /                                                         |  |\n");
+printf("|                          / <-----RUTA 2:25 minutos(39.7$,peaje incluido)            |  |\n");
+printf("|                         /                                                           |  | \n");
+printf("|                        /                                                            |  | \n");
+printf("|                       /                                                             |  |  \n");
+printf("|                      /                                                             /   |   \n");
+printf("|                     /                                                             /    | \n");
+printf("|                    /                                                             /     | \n");
+printf("|                   /                                                             /      | \n");
+printf("|                  /                              RUTA 1:39 minutos(24$)-------> |       |  \n");
+printf("|           DESTINO______________________________________________________________|       |  \n");
+printf("|________________________________________________________________________________________|\n");
+
+
+}
 
 
