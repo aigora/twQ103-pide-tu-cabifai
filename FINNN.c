@@ -3,6 +3,9 @@
 #include <stdlib.h>
 void mapa2();
 void mapa1();
+void mapa3();
+void mapa4();
+void mapa5();
 void rutas();
 void menuPrincipal();
 void menuUsuario();
@@ -391,6 +394,58 @@ printf("|_______________________________________________________________________
 
 
 }
+void mapa3(){
+	
+	printf(" ________________________________________________________________________________________\n");
+printf("|                                   ____________________________________SALIDA ________     |\n");
+printf("|                                  /                                                  |     |\n");
+printf("|                                 / <-----RUTA 2:35 minutos(45.9$,peaje incluido)     |     |\n");
+printf("|                                /                                                    |     | \n");
+printf("|                               /                                        _____________|     | \n");
+printf("|                              /                                         |                  |  \n");
+printf("|                      _______/                                        __|                  |   \n");
+printf("|                     /                                                |                    | \n");
+printf("|                    /                                                 |                    | \n");
+printf("|                   /                                                  |___                 | \n");
+printf("|                  /     RUTA 1:49 minutos(31$,carretera en obras)------->|                 |  \n");
+printf("|           DESTINO_______________________________________________________|                 |  \n");
+printf("|___________________________________________________________________________________________|\n");
+
+}
+
+void mapa4(){
+	printf(" ________________________________________________________________________________________\n");
+	printf("|SALIDA______                                                                            |\n");
+	printf("|     |     |                                                                            |\n");
+	printf("|     |     |__________                                                                  |\n");
+	printf("|     |               |	                  RUTA 1:                                        | \n");
+	printf("|     |_______________|_______*<-----49 minutos(34.5$,accidente en el km 50)             | \n");
+	printf("|                     |______|__________                                                 |  \n");
+	printf("|                            |         |     _______________                             |   \n");
+	printf("|                            |         |    |               |                            | \n");
+	printf("|                            |         |____|_______________|___                         | \n");
+	printf("|                            |              |               |   |___                     | \n");
+	printf("|                            |______________|               |_______|                    |  \n");
+	printf("|                                  RUTA 2:25 minutos(28$) ------->  |_______ DESTINO     |\n");
+	printf("|________________________________________________________________________________________|\n");
+
+}
+void mapa5(){
+	printf(" _________________________________________________________________________________________\n");
+	printf("|                                                                                         |\n");
+	printf("|                   _____________________________________________________________ DESTINO |\n");
+	printf("|                  /                                                                  |   |\n");
+	printf("|                 /  <-Ruta 2: 8min, 20.70$                                           |   | \n");
+	printf("|                /                                                                    |   |  \n");
+	printf("|               /                                                             ________|   |   \n");
+	printf("|              /                                                             /            | \n");
+	printf("|             /                                                             /             | \n");
+	printf("|            /                                     Ruta 1: 12min, 15.60$-->/              |\n");
+	printf("|      SALIDA__________________________________                           /               |\n ");
+	printf("|                                              |                         /                | \n");
+	printf("|                                              |________________________/                 |  \n");
+	printf("|_________________________________________________________________________________________|\n");
+}
 void rutas(){
 			int seleccionRuta1;
 			char ubicacion[50];
@@ -451,8 +506,16 @@ void rutas(){
 			
 				printf("\t\tIntroduzca su ubicacion(ciudad,calle):\n");
 				gets(cliente[nUsuarios].ubicacion);
-				printf("\t\tEn breves estara el conductor en su ubicacion\n");
-				printf("\t\tEl precio sera: 16$\n");
+				mapa5();
+			printf("\nElija una ruta,siendo la uno la mas larga.\n");
+				scanf("%d",&seleccionRuta1);
+				if(seleccionRuta1==1){
+					printf("\t\tEn breves estara el conductor en su ubicacion.\n");
+					printf("\t\tEl precio sera: 20.7$\n");
+				}else{
+					printf("\t\tEn breves estara el conductor en su ubicacion.\n");
+					printf("\t\tEl precio sera: 15.6$\n");
+				}
 					system("pause");
 				system("cls");
 				break;
@@ -461,8 +524,16 @@ void rutas(){
 					system("cls");
 				printf("\t\tIntroduzca su ubicacion(ciudad,calle):\n");
 				gets(cliente[nUsuarios].ubicacion);
-				printf("\t\tEn breves estara el conductor en su ubicacion:\n");
-				printf("\t\tEl precio sera: 9$\n");
+				mapa3();
+					printf("\nElija una ruta,siendo la uno la mas larga.\n");
+				scanf("%d",&seleccionRuta1);
+				if(seleccionRuta1==1){
+					printf("\t\tEn breves estara el conductor en su ubicacion.\n");
+					printf("\t\tEl precio sera: 45.9$\n");
+				}else{
+					printf("\t\tEn breves estara el conductor en su ubicacion.\n");
+					printf("\t\tEl precio sera: 31$\n");
+				}
 					system("pause");
 				system("cls");
 				break;
@@ -471,8 +542,16 @@ void rutas(){
 					system("cls");
 				printf("\t\tIntroduzca su ubicacion(ciudad,calle):\n");
 				gets(cliente[nUsuarios].ubicacion);
-				printf("\t\tEn breves estara el conductor en su ubicacion:\n");
-				printf("\t\tEl precio sera: 50$\n");
+				mapa4();
+				printf("\nElija una ruta,siendo la uno la mas larga.\n");
+				scanf("%d",&seleccionRuta1);
+				if(seleccionRuta1==1){
+					printf("\t\tEn breves estara el conductor en su ubicacion.\n");
+					printf("\t\tEl precio sera: 28$\n");
+				}else{
+					printf("\t\tEn breves estara el conductor en su ubicacion.\n");
+					printf("\t\tEl precio sera: 34.5$\n");
+				}
 				system("pause");
 				system("cls");
 				break;
